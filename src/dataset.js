@@ -6,7 +6,7 @@ const defaultDataset = {
           {content: "学習コミュニティについて知りたい", nextId: "community"},
           {content: "お付き合いしたい", nextId: "dating"},
       ],
-      question: "こんにちは！🐯トラハックへのご用件はなんでしょうか？",
+      question: "こんにちは！質問を選んでください！aaaaaaaaaaaaaaaaaaa",
   },
   "job_offer": {
       answers: [
