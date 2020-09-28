@@ -2,6 +2,7 @@ import React from 'react';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
+import NoProfile from '../assets/img/no-profile.png'; 
 
 const Chat = props => {
   const isQuestion = (props.type === 'question');
@@ -10,7 +11,11 @@ const Chat = props => {
   return (
     <ListItem alignItems="flex-start" className={classes}>
       <ListItemAvatar>
-        <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+        {isQuestion ? (
+          <Avatar alt="Kazuya Matsuo" src="/static/images/avatar/1.jpg" />
+        ) : (
+          <Avatar alt="icon-question" src={NoProfile} />
+        )}
       </ListItemAvatar>
       <div className="p-chat__bubble">{props.text}</div>
 
