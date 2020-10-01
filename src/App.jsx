@@ -35,20 +35,20 @@ export default class App extends React.Component {
   selectAnswer = (selectedAnswer, nextQuestionId) => {
     switch(true) {
       case (nextQuestionId === 'init'):
-        this.displayNextQuestion(nextQuestionId);
+        setTimeout( () => this.displayNextQuestion(nextQuestionId), 500); 
         break;
-        default:
-          const chats = this.state.chats;
-          const chat = {
-            text: selectedAnswer,
-            type: 'answer'
-          }
-    
-          chats.push(chat);
-          this.setState({
-            chats: chats
-          })
-         this.displayNextQuestion(nextQuestionId);
+      default:
+        const chats = this.state.chats;
+        const chat = {
+          text: selectedAnswer,
+          type: 'answer'
+        }
+  
+        chats.push(chat);
+        this.setState({
+          chats: chats
+        })
+        setTimeout( () => this.displayNextQuestion(nextQuestionId), 500); 
     }
   }
 
@@ -57,6 +57,14 @@ export default class App extends React.Component {
     this.selectAnswer(initAnswer, this.state.currentId);
   }
 
+  componentDidUpdate() {
+    // スクロール位置の頂点をスクロール領域の最下部に設定する
+    const scrollArea = document.getElementById('scroll-area');
+    if (scrollArea) {
+      scrollArea.scrollTop = scrollArea.scrollHeight;
+    }
+
+  }
 
   render() {
     return (
