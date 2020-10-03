@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { createElement } from 'react';
 import defaultDataset from './dataset';
 import './assets/style/style.css';
 import {AnswersList, Chats} from './components/index';
 import { ChatSharp } from '@material-ui/icons';
+import FromDialog from './components/forms/FormDialog';
 
 
 export default class App extends React.Component {
@@ -16,6 +17,8 @@ export default class App extends React.Component {
       open: false
     }
     this.selectAnswer = this.selectAnswer.bind(this);
+    this.handleClickClose = this.handleClickClose.bind(this);
+    this.handleClickOpen = this.handleClickOpen.bind(this);
   }
 
   displayNextQuestion = (nextQuestionId) => {
@@ -37,6 +40,15 @@ export default class App extends React.Component {
       case (nextQuestionId === 'init'):
         setTimeout( () => this.displayNextQuestion(nextQuestionId), 500); 
         break;
+      case (/^https:*/.test(nextQuestionId)):
+        const a = document.createElement('a');
+        a.href = nextQuestionId;
+        a.target = '_blank';
+        a.click();
+        break;
+      case (nextQuestionId === 'contact'):
+        this.handleClickOpen();
+        break;
       default:
         const chats = this.state.chats;
         const chat = {
@@ -50,6 +62,14 @@ export default class App extends React.Component {
         })
         setTimeout( () => this.displayNextQuestion(nextQuestionId), 500); 
     }
+  }
+
+  handleClickOpen = () => {
+    this.setState({open: true});
+  }
+
+  handleClickClose = () => {
+    this.setState({open: false});
   }
 
   componentDidMount() {
@@ -75,6 +95,7 @@ export default class App extends React.Component {
             answers={this.state.answers}
             select={this.selectAnswer}
           />
+          <FromDialog open={this.state.open} handleClickClose={this.handleClickClose} />
         </div>
       </section>
 
