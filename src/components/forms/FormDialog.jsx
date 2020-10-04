@@ -35,6 +35,27 @@ export default class FromDialog extends React.Component {
     const name = this.state.name;
     const email = this.state.email;
     const text = this.state.text;
+    const payload = {
+      text: 'お問い合わせがありました\n'
+          + 'お名前: ' + name + '\n'
+          + 'メールアドレス: ' + email + '\n'
+          + '【問い合わせ内容】\n' + text
+    };
+
+    const url = "https://hooks.slack.com/services/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";
+
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(payload)
+    }).then(() => {
+      alert('送信が完了しました');
+      this.setState({
+        name: "",
+        email: "",
+        text: ""
+      })
+      return this.props.handleClickClose();
+    })
   }
 
 
@@ -55,7 +76,7 @@ export default class FromDialog extends React.Component {
             label={"メールアドレス(必須)"} multiline={false} rows={1} 
             value={this.state.email} type={"email"} onChange={this.inputEmail} />
           <TextInput 
-            label={"内容(必須)"} multiline={false} rows={5} 
+            label={"内容(必須)"} multiline={true} rows={5} 
             value={this.state.text} type={"text"} onChange={this.inputText} />
         </DialogContent>
         <DialogActions>
