@@ -1,0 +1,78 @@
+{
+    "init": {
+        "answers": [
+            {"content": "仕事を依頼したい", "nextId": "job_offer"},
+            {"content": "エンジニアのキャリアについて相談したい", "nextId": "consultant"},
+            {"content": "学習コミュニティについて知りたい", "nextId": "community"},
+            {"content": "test", "nextId": "test"}
+        ],
+        "question": "こんにちは！質問を選択すると、回答を表示ます！"
+    },
+    "job_offer": {
+        "answers": [
+            {"content": "Webサイトを制作してほしい", "nextId": "website"},
+            {"content": "Webアプリを開発してほしい", "nextId": "webapp"},
+            {"content": "自動化ツールを作ってほしい", "nextId": "automation_tool"},
+            {"content": "その他", "nextId": "other_jobs"}
+        ],
+        "question": "どのようなお仕事でしょうか？"
+    },
+    "website": {
+        "answers": [
+            {"content": "問い合わせる", "nextId": "contact"},
+            {"content": "最初の質問に戻る", "nextId": "init"}
+        ],
+        "question": "Webサイトについてですね。コチラからお問い合わせできます。"
+    },
+    "webapp": {
+        "answers": [
+            {"content": "問い合わせる", "nextId": "contact"},
+            {"content": "最初の質問に戻る", "nextId": "init"}
+        ],
+        "question": "Webアプリ開発についてですね。コチラからお問い合わせできます。"
+    },
+    "automation_tool": {
+        "answers": [
+            {"content": "問い合わせる", "nextId": "contact"},
+            {"content": "最初の質問に戻る", "nextId": "init"}
+        ],
+        "question": "自動化ツール開発についてですね。コチラからお問い合わせできます。"
+    },
+    "other_jobs": {
+        "answers": [
+            {"content": "問い合わせる", "nextId": "contact"},
+            {"content": "最初の質問に戻る", "nextId": "init"}
+        ],
+        "question": "その他についてですね。コチラからお問い合わせできます。"
+    },
+    "consultant": {
+        "answers": [
+            {"content": "test", "nextId": "test"},
+            {"content": "test", "nextId": "community"},
+            {"content": "test", "nextId": "init"}
+        ],
+        "question": "aaa"
+    },
+    "community": {
+        "answers": [
+            {"content": "ttt", "nextId": "community_activity"},
+            {"content": "aaa", "nextId": "aaa"},
+            {"content": "最初の質問に戻る", "nextId": "init"}
+        ],
+        "question": "kkkkk"
+    },
+    "community_activity": {
+        "answers": [
+            {"content": "test", "nextId": "https://google.com"},
+            {"content": "test", "nextId": "https://google.com"},
+            {"content": "最初の質問に戻る", "nextId": "init"}
+        ],
+        "question": "kaigyou\ntest"
+    },
+    "test": {
+        "answers": [
+            {"content": "最初の質問に戻る", "nextId": "init"}
+        ],
+        "question": "yes"
+    }
+}

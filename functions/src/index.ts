@@ -1,9 +1,16 @@
-// import * as functions from 'firebase-functions';
+import * as functions from 'firebase-functions';
+import * as admin from "firebase-admin"; admin.initializeApp();
 
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+const db = admin.firestore();
+
+const sendResponse = (response: functions.Response, statusCode: number, body: any) => {
+  response.send({
+    statusCode,
+    body: JSON.stringify(body);
+  })
+};
+
+//外部からcloud-function使う場合はexport
+export const addDataset = functions.https.onRequest( async(req: any, res: any) => {
+
+})
