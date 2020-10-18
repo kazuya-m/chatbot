@@ -2,11 +2,11 @@
     "init": {
         "answers": [
             {"content": "仕事を依頼したい", "nextId": "job_offer"},
-            {"content": "エンジニアのキャリアについて相談したい", "nextId": "consultant"},
-            {"content": "学習コミュニティについて知りたい", "nextId": "community"},
-            {"content": "test", "nextId": "test"}
+            {"content": "プロフィールを知りたい", "nextId": "profile"},
+            {"content": "業務経歴を知りたい", "nextId": "cv"},
+            {"content": "コンタクトを取りたい", "nextId": "test"}
         ],
-        "question": "こんにちは！質問を選択すると、回答を表示ます！"
+        "question": "こんにちは！質問を選択すると、回答を表示します！"
     },
     "job_offer": {
         "answers": [
@@ -45,15 +45,15 @@
         ],
         "question": "その他についてですね。コチラからお問い合わせできます。"
     },
-    "consultant": {
+    "profile": {
         "answers": [
             {"content": "test", "nextId": "test"},
-            {"content": "test", "nextId": "community"},
+            {"content": "test", "nextId": "cv"},
             {"content": "test", "nextId": "init"}
         ],
         "question": "aaa"
     },
-    "community": {
+    "cv": {
         "answers": [
             {"content": "ttt", "nextId": "community_activity"},
             {"content": "aaa", "nextId": "aaa"},
