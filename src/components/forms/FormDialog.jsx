@@ -58,7 +58,6 @@ export default class FromDialog extends React.Component {
     })
   }
 
-
   render() {
     return (
       <Dialog
