@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useCallback} from 'react';
 import './assets/style/style.css';
 import {AnswersList, Chats} from './components/index';
-import FromDialog from './components/forms/FormDialog';
+import FormDialog from './components/forms/FormDialog';
 import {db} from './firebase/index';
 
 const App = () => {
@@ -90,7 +90,7 @@ const App = () => {
           answers={answers}
           select={selectAnswer}
         />
-        <FromDialog open={open} handleClickClose={handleClickClose} />
+        <FormDialog open={open} handleClickClose={handleClickClose} />
       </div>
     </section>
   );
