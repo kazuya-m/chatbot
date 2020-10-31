@@ -1,78 +1,81 @@
 {
     "init": {
         "answers": [
-            {"content": "仕事を依頼したい", "nextId": "job_offer"},
             {"content": "プロフィールを知りたい", "nextId": "profile"},
-            {"content": "業務経歴を知りたい", "nextId": "cv"},
-            {"content": "コンタクトを取りたい", "nextId": "test"}
+            {"content": "業務経歴やスキルを知りたい", "nextId": "cv"},
+            {"content": "このチャットについて知りたい", "nextId": "chatbot"},
+            {"content": "コンタクトを取りたい", "nextId": "contact"}
         ],
         "question": "こんにちは！質問を選択すると、回答を表示します！"
     },
-    "job_offer": {
+    "profile": {
         "answers": [
-            {"content": "Webサイトを制作してほしい", "nextId": "website"},
-            {"content": "Webアプリを開発してほしい", "nextId": "webapp"},
-            {"content": "自動化ツールを作ってほしい", "nextId": "automation_tool"},
-            {"content": "その他", "nextId": "other_jobs"}
+            {"content": "人物や経歴を知りたい", "nextId": "me"},
+            {"content": "IT業界の経験を知りたい", "nextId": "me-in-tech"},
+            {"content": "取り組んでいる自己学習について知りたい", "nextId": "study"},
+            {"content": "その他", "nextId": "profile-other"}
         ],
-        "question": "どのようなお仕事でしょうか？"
+        "question": "どのようなプロフィールでしょうか？"
     },
-    "website": {
+    "me": {
         "answers": [
             {"content": "問い合わせる", "nextId": "contact"},
             {"content": "最初の質問に戻る", "nextId": "init"}
         ],
-        "question": "Webサイトについてですね。コチラからお問い合わせできます。"
+        "question": "業界4年目の29歳で、主にフロントエンド"
     },
-    "webapp": {
+    "me-in-tech": {
         "answers": [
             {"content": "問い合わせる", "nextId": "contact"},
             {"content": "最初の質問に戻る", "nextId": "init"}
         ],
         "question": "Webアプリ開発についてですね。コチラからお問い合わせできます。"
     },
-    "automation_tool": {
+    "study": {
         "answers": [
+            {"content": "勉強している技術一覧を見る", "nextId": "syudy-list"},
+            {"content": "GitHubを見る", "nextId": "https://github.com/kazuya-m"},
             {"content": "問い合わせる", "nextId": "contact"},
             {"content": "最初の質問に戻る", "nextId": "init"}
         ],
-        "question": "自動化ツール開発についてですね。コチラからお問い合わせできます。"
+        "question": "自己学習"
     },
-    "other_jobs": {
+    "profile-other": {
         "answers": [
             {"content": "問い合わせる", "nextId": "contact"},
             {"content": "最初の質問に戻る", "nextId": "init"}
         ],
         "question": "その他についてですね。コチラからお問い合わせできます。"
     },
-    "profile": {
-        "answers": [
-            {"content": "test", "nextId": "test"},
-            {"content": "test", "nextId": "cv"},
-            {"content": "test", "nextId": "init"}
-        ],
-        "question": "aaa"
-    },
     "cv": {
         "answers": [
-            {"content": "ttt", "nextId": "community_activity"},
-            {"content": "aaa", "nextId": "aaa"},
+            {"content": "直近の案件とスキルを聞きたい", "nextId": "recent"},
+            {"content": "業務経歴書を見たい", "nextId": "dl-cv"},
             {"content": "最初の質問に戻る", "nextId": "init"}
         ],
-        "question": "kkkkk"
+        "question": "直近の案件か全ての案件、どちらでしょうか？"
     },
-    "community_activity": {
+    "recent": {
         "answers": [
-            {"content": "test", "nextId": "https://google.com"},
-            {"content": "test", "nextId": "https://google.com"},
+            {"content": "業務経歴書を見る", "nextId": "dl-cv"},
+            {"content": "問い合わせる", "nextId": "contact"},
             {"content": "最初の質問に戻る", "nextId": "init"}
         ],
-        "question": "kaigyou\ntest"
+        "question": "コールセンターのオペレーターさんが使用する、電話と連携する画面を設計〜開発〜テストをしていました。主にJavaScriptを使用していました。"
     },
-    "test": {
+    "dl-cv": {
         "answers": [
+            {"content": "Googleスプレッドシートで閲覧する(推奨)", "nextId": "https://drive.google.com/file/d/1JU9Ae1iGqmXR3gyBE4G5K15C8LNr4Y1A/view?usp=sharing"},
+            {"content": "PDFをダウンロードする(選択するとDLが開始します)", "nextId": "https://google.com"},
             {"content": "最初の質問に戻る", "nextId": "init"}
         ],
-        "question": "yes"
+        "question": "経歴書ですね。閲覧かDLを選択してください。"
+    },
+    "chatbot": {
+        "answers": [
+            {"content": "全体の構成図を見る", "nextId": "contact"},
+            {"content": "最初の質問に戻る", "nextId": "init"}
+        ],
+        "question": "どちらについて"
     }
 }
