@@ -10,72 +10,36 @@
     },
     "profile": {
         "answers": [
-            {"content": "人物や経歴を知りたい", "nextId": "me"},
-            {"content": "IT業界の経験を知りたい", "nextId": "me-in-tech"},
-            {"content": "取り組んでいる自己学習について知りたい", "nextId": "study"},
-            {"content": "その他", "nextId": "profile-other"}
-        ],
-        "question": "どのようなプロフィールでしょうか？"
-    },
-    "me": {
-        "answers": [
-            {"content": "問い合わせる", "nextId": "contact"},
+            {"content": "業務経歴を知りたい", "nextId": "dl-cv"},
+            {"content": "コンタクトを取りたい", "nextId": "contact"},
             {"content": "最初の質問に戻る", "nextId": "init"}
         ],
-        "question": "業界4年目の29歳で、主にフロントエンド"
-    },
-    "me-in-tech": {
-        "answers": [
-            {"content": "問い合わせる", "nextId": "contact"},
-            {"content": "最初の質問に戻る", "nextId": "init"}
-        ],
-        "question": "Webアプリ開発についてですね。コチラからお問い合わせできます。"
-    },
-    "study": {
-        "answers": [
-            {"content": "勉強している技術一覧を見る", "nextId": "syudy-list"},
-            {"content": "GitHubを見る", "nextId": "https://github.com/kazuya-m"},
-            {"content": "問い合わせる", "nextId": "contact"},
-            {"content": "最初の質問に戻る", "nextId": "init"}
-        ],
-        "question": "自己学習"
-    },
-    "profile-other": {
-        "answers": [
-            {"content": "問い合わせる", "nextId": "contact"},
-            {"content": "最初の質問に戻る", "nextId": "init"}
-        ],
-        "question": "その他についてですね。コチラからお問い合わせできます。"
+        "question": "1991年生まれの29歳です。業界5年目で、テスター3年、設計〜開発を1年〜経験しています。経験・希望共にロントエンドを中心としていて、業務・自己学習の両輪で継続的な改善を行っています。"
     },
     "cv": {
         "answers": [
-            {"content": "直近の案件とスキルを聞きたい", "nextId": "recent"},
             {"content": "業務経歴書を見たい", "nextId": "dl-cv"},
+            {"content": "スキル一覧を表示する", "nextId": "skills"},
+            {"content": "GitHubを見る", "nextId": "https://github.com/kazuya-m"},
             {"content": "最初の質問に戻る", "nextId": "init"}
         ],
-        "question": "直近の案件か全ての案件、どちらでしょうか？"
-    },
-    "recent": {
-        "answers": [
-            {"content": "業務経歴書を見る", "nextId": "dl-cv"},
-            {"content": "問い合わせる", "nextId": "contact"},
-            {"content": "最初の質問に戻る", "nextId": "init"}
-        ],
-        "question": "コールセンターのオペレーターさんが使用する、電話と連携する画面を設計〜開発〜テストをしていました。主にJavaScriptを使用していました。"
+        "question": "経歴やスキルについてですね。取得する情報を選択してください。"
     },
     "dl-cv": {
         "answers": [
             {"content": "Googleスプレッドシートで閲覧する(推奨)", "nextId": "https://drive.google.com/file/d/1JU9Ae1iGqmXR3gyBE4G5K15C8LNr4Y1A/view?usp=sharing"},
-            {"content": "PDFをダウンロードする(選択するとDLが開始します)", "nextId": "https://google.com"},
+            {"content": "PDFをダウンロードする(選択でDLを開始します)", "nextId": "https://google.com"},
+            {"content": "ひとつ前の質問に戻る", "nextId": "cv"},
             {"content": "最初の質問に戻る", "nextId": "init"}
         ],
         "question": "経歴書ですね。閲覧かDLを選択してください。"
     },
     "chatbot": {
         "answers": [
-            {"content": "全体の構成図を見る", "nextId": "contact"},
+            {"content": "全体の構成図を見る", "nextId": "map"},
+            {"content": "GitHubでソースコードを見る", "nextId": "https://github.com/kazuya-m/chat-bot"},
             {"content": "最初の質問に戻る", "nextId": "init"}
         ],
-        "question": "どちらについて"
+        "question": "このチャットについてですね。どの情報を表示しますか？"
     }
 }
