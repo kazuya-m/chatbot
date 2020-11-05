@@ -14,7 +14,7 @@
             {"content": "コンタクトを取りたい", "nextId": "contact"},
             {"content": "最初の質問に戻る", "nextId": "init"}
         ],
-        "question": "1991年生まれの29歳です。業界5年目で、テスター3年、設計〜開発を1年〜経験しています。経験・希望共にロントエンドを中心としていて、業務・自己学習の両輪で継続的な改善を行っています。"
+        "question": "1991年生まれの29歳です。業界5年目で、テスター3年、設計〜開発を1年〜経験しています。経験・希望共にフロントエンドを中心としていて、業務・自己学習の両輪で継続的な改善を行っています。"
     },
     "cv": {
         "answers": [
@@ -36,10 +36,18 @@
     },
     "chatbot": {
         "answers": [
+            {"content": "使用している技術が知りたい", "nextId": "chat-lang"},
             {"content": "全体の構成図を見る", "nextId": "map"},
             {"content": "GitHubでソースコードを見る", "nextId": "https://github.com/kazuya-m/chatbot"},
             {"content": "最初の質問に戻る", "nextId": "init"}
         ],
         "question": "このチャットについてですね。どの情報を表示しますか？"
+    },
+    "chat-lang": {
+        "answers": [
+            {"content": "ひとつ前の質問に戻る", "nextId": "chatbot"},
+            {"content": "最初の質問に戻る", "nextId": "init"}
+        ],
+        "question": "React(Hooksを使用)、Firebase(Firestore, CLoud Function, Firebase Storage)、Material-UIを使用しています。"
     }
 }
