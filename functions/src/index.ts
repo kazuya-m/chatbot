@@ -27,6 +27,6 @@ export const addDataset = functions.https.onRequest( async(req: any, res: any) =
       const data = dataset[key];
       await db.collection('questions').doc(key).set(data); // Firestorのデータ構造。collection - document - data の階層
     }
-    sendResponse(res, 200, {message: 'Successgulyy added dataset'});
+    sendResponse(res, 200, {message: 'Successfuly added dataset'});
   }
 })
