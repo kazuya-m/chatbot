@@ -2,7 +2,9 @@ import React, {useState, useEffect, useCallback} from 'react';
 import './assets/style/style.css';
 import {AnswersList, Chats} from './components/index';
 import FormDialog from './components/forms/FormDialog';
+import InfoModal from './components/modal/InfoModal';
 import {db} from './firebase/index';
+
 
 const App = () => {
   const [answers, setAnswers] = useState([]);
@@ -10,6 +12,7 @@ const App = () => {
   const [currentId, setCurrentId] = useState("init");
   const [dataset, setDataset] = useState({});
   const [open, setOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const displayNextQuestion = (nextQuestionId, nextDataset) => {
     addChats({
@@ -31,6 +34,9 @@ const App = () => {
       case (nextQuestionId === 'contact'):
         handleClickOpen();
         break;
+      case (nextQuestionId === 'skills'):
+        handleClickModalOpen();
+        break;
       default:
         addChats({
           text: selectedAnswer,
@@ -51,28 +57,37 @@ const App = () => {
     setOpen(true);  
   }
 
+
+  const handleClickModalOpen = () => {
+    setModalOpen(true);  
+  }
+
+  const handleClickModalClose = () => {
+    setModalOpen(false);  
+  }
+
   const handleClickClose = useCallback (() => {
     setOpen(false)
   }, [setOpen]);
+  
+  // 最初の質問をチャットエリアに表示する
+  useEffect(() => {
+    (async() => {
+      const initDataset = {};
 
-    // 最初の質問をチャットエリアに表示する
-    useEffect(() => {
-      (async() => {
-          const initDataset = {};
+      // Fetch questions dataset from Firestore
+      await db.collection('questions').get().then(snapshots => {
+          snapshots.forEach(doc => {
+              initDataset[doc.id] = doc.data()
+          })
+      });
 
-          // Fetch questions dataset from Firestore
-          await db.collection('questions').get().then(snapshots => {
-              snapshots.forEach(doc => {
-                  initDataset[doc.id] = doc.data()
-              })
-          });
+      // Firestoreから取得したデータセットを反映
+      setDataset(initDataset);
 
-          // Firestoreから取得したデータセットを反映
-          setDataset(initDataset);
-
-          // 最初の質問を表示
-          displayNextQuestion(currentId, initDataset[currentId])
-      })();
+      // 最初の質問を表示
+      displayNextQuestion(currentId, initDataset[currentId])
+    })();
   }, []);
 
   useEffect(() => {
@@ -91,6 +106,7 @@ const App = () => {
           select={selectAnswer}
         />
         <FormDialog open={open} handleClickClose={handleClickClose} />
+        <InfoModal modalOpen={modalOpen} handleClickModalClose={handleClickModalClose} />
       </div>
     </section>
   );
