@@ -28,7 +28,7 @@
     "dl-cv": {
         "answers": [
             {"content": "Googleスプレッドシートで閲覧する(推奨)", "nextId": "https://drive.google.com/file/d/1JU9Ae1iGqmXR3gyBE4G5K15C8LNr4Y1A/view?usp=sharing"},
-            {"content": "PDFをダウンロードする(選択でDLを開始します)", "nextId": "https://google.com"},
+            {"content": "PDFをダウンロードする(選択でDLを開始します)", "nextId": "download"},
             {"content": "他の経歴やスキルを見る", "nextId": "cv"},
             {"content": "最初の質問に戻る", "nextId": "init"}
         ],
