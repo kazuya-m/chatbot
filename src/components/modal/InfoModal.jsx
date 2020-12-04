@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 
@@ -22,27 +22,34 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     width: 400,
     backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
+    border: '1px solid #ffffff',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
 }));
-
 const InfoModal = props => {
 
   const classes = useStyles();
 
-  const body = (
-    <div
-     style={getModalStyle()}
-     className={classes.paper}>
-      <h2 id="simple-modal-title">Text in a modal</h2>
-      <p id="simple-modal-description">
-        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-      </p>
-      <InfoModal />
-    </div>
-  );
+  let body;
+
+  switch (props.modalId) {
+    case 'skills':
+       body = (
+        <div
+         style={getModalStyle()}
+         className={classes.paper}>
+          <h2 id="simple-modal-title">Text in a modal</h2>
+          <p id="simple-modal-description">
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          </p>
+          <InfoModal />
+        </div>
+      );    
+      break;
+    default:
+      break;
+  }
 
   return (
     <div>

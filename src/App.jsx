@@ -13,6 +13,7 @@ const App = () => {
   const [dataset, setDataset] = useState({});
   const [open, setOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const [modalId, setModalId] = useState(null);
 
   const displayNextQuestion = (nextQuestionId, nextDataset) => {
     addChats({
@@ -35,6 +36,7 @@ const App = () => {
         handleClickOpen();
         break;
       case (nextQuestionId === 'skills'):
+        addModalId(nextQuestionId);
         handleClickModalOpen();
         break;
       default:
@@ -57,7 +59,6 @@ const App = () => {
     setOpen(true);  
   }
 
-
   const handleClickModalOpen = () => {
     setModalOpen(true);  
   }
@@ -69,6 +70,10 @@ const App = () => {
   const handleClickClose = useCallback (() => {
     setOpen(false)
   }, [setOpen]);
+
+  const addModalId = id => {
+    setModalId(id);
+  }
   
   // 最初の質問をチャットエリアに表示する
   useEffect(() => {
@@ -106,7 +111,7 @@ const App = () => {
           select={selectAnswer}
         />
         <FormDialog open={open} handleClickClose={handleClickClose} />
-        <InfoModal modalOpen={modalOpen} handleClickModalClose={handleClickModalClose} />
+        <InfoModal modalOpen={modalOpen} modalId={modalId} handleClickModalClose={handleClickModalClose} />
       </div>
     </section>
   );
