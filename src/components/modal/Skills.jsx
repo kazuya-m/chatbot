@@ -15,7 +15,6 @@ const useStyles = makeStyles({
   "skillList": {
     width: "47%",
     height: 140,
-
   },
 });
 
@@ -32,6 +31,8 @@ const Skills = () => {
   const studyToString = '自己学習';
   const workToString = '業務経験';
   const bothToString = '業務経験 / 自己学習';
+
+  // Cardに渡すスタイル
 
   // JSONから渡ってきた文字列を表示用に変更
   Object.keys(skillSet).forEach(key => {
