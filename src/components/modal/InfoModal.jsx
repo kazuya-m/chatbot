@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
+import Skills from './Skills';
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -27,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2, 4, 3),
   },
 }));
+
 const InfoModal = props => {
 
   const classes = useStyles();
@@ -39,11 +41,7 @@ const InfoModal = props => {
         <div
          style={getModalStyle()}
          className={classes.paper}>
-          <h2 id="simple-modal-title">Text in a modal</h2>
-          <p id="simple-modal-description">
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </p>
-          <InfoModal />
+           <Skills />
         </div>
       );    
       break;
