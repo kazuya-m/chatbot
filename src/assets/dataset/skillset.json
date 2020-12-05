@@ -1,0 +1,26 @@
+{
+  "html": {
+    "id": "html",
+    "exp": "both"
+  },
+  "css": {
+    "id": "css",
+    "exp": "both"
+  },
+  "javascript": {
+    "id": "js",
+    "exp": "both"
+  },
+  "react": {
+    "id": "react",
+    "exp": "study"
+  },
+  "materialui": {
+    "id": "materialui",
+    "exp": "study"
+  },
+  "firebase": {
+    "id": "firebase",
+    "exp": "firebase"
+  }
+}
