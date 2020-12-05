@@ -1,10 +1,28 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import MediaCard from './MediaCard';
 import skillSet from '../../assets/dataset/skillset.json'
+import { List } from '@material-ui/icons';
 //import Icon from './Icon.js';
+
+const useStyles = makeStyles({
+  "root": {
+    maxWidth: 345,
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-around"
+  },
+  "skillList": {
+    width: "47%",
+    height: 140,
+
+  },
+});
 
 
 const Skills = () => {
+  const classes = useStyles();
+
   // JSONから渡ってくる文字列
   const study = 'study';
   const work = 'work';
@@ -33,10 +51,11 @@ const Skills = () => {
   });
  
   return (
-    <div>
+    <div className={classes.root}>
       {Object.keys(skillSet).map(key => (
-        // <MediaCard />
-        <MediaCard key={key} name={skillSet[key].id} exp={skillSet[key].exp} />
+        <li key={key.toString()} className={classes.skillList}>
+          <MediaCard name={skillSet[key].id} exp={skillSet[key].exp} />
+        </li>
        ))}
     </div>
   )

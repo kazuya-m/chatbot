@@ -10,13 +10,12 @@ const useStyles = makeStyles({
     maxWidth: 345,
   },
   media: {
-    height: 140,
+    maxHeight: 140,
   },
 });
 
 const MediaCard = props => {
   const classes = useStyles();
-
 
   return (
     <Card className={classes.root}>
