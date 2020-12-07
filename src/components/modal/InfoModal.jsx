@@ -21,11 +21,12 @@ function getModalStyle() {
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
-    width: 400,
+    maxWidth: 432,
+    maxHeight: 432,
     backgroundColor: theme.palette.background.paper,
-    border: '1px solid #ffffff',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+    //border: '1px solid #ffffff',
+    // boxShadow: theme.shadows[5],
+    // padding: theme.spacing(2, 4, 3),
   },
 }));
 
@@ -54,8 +55,8 @@ const InfoModal = props => {
       <Modal
         open={props.modalOpen}
         onClose={props.handleClickModalClose}
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
+        // aria-labelledby="simple-modal-title"
+        // aria-describedby="simple-modal-description"
       >
         {body}
       </Modal>

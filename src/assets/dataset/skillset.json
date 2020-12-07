@@ -1,26 +1,30 @@
 {
   "html": {
-    "id": "html",
+    "name": "HTML",
     "exp": "both"
   },
   "css": {
-    "id": "css",
+    "name": "CSS",
     "exp": "both"
   },
   "javascript": {
-    "id": "js",
+    "name": "JavaScript",
     "exp": "both"
   },
   "react": {
-    "id": "react",
+    "name": "React",
     "exp": "study"
   },
   "materialui": {
-    "id": "materialui",
+    "name": "Material-UI",
     "exp": "study"
   },
   "firebase": {
-    "id": "firebase",
-    "exp": "firebase"
+    "name": "Firebase",
+    "exp": "study"
+  },
+  "Git": {
+    "name": "Git / GitHub",
+    "exp": "study"
   }
 }

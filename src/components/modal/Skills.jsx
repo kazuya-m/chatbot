@@ -7,13 +7,20 @@ import { List } from '@material-ui/icons';
 
 const useStyles = makeStyles({
   "root": {
-    maxWidth: 345,
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around"
+    maxWidth: "100%",
+    alignContent: "center"
   },
   "skillList": {
-    width: "47%",
+    width: "100%",
+    listStyle: "none",
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    margin: 0,
+    padding: "30px 0 0 0"
+  },
+  "skillItem": {
+    width: "45%",
     height: 140,
   },
 });
@@ -52,13 +59,16 @@ const Skills = () => {
   });
  
   return (
-    <div className={classes.root}>
+//    <div className={classes.root}>
+      <ul className={classes.skillList}>
       {Object.keys(skillSet).map(key => (
-        <li key={key.toString()} className={classes.skillList}>
-          <MediaCard name={skillSet[key].id} exp={skillSet[key].exp} />
+        <li key={key.toString()} className={classes.skillItem}>
+          <MediaCard name={skillSet[key].name} exp={skillSet[key].exp} />
         </li>
        ))}
-    </div>
+
+      </ul>
+  //  </div>
   )
 
 
