@@ -29,15 +29,24 @@
 }
 
 .p-chat__bubble {
-  background: #41B6E6;
   border-radius: 4px;
-  color: #fff;
-  font-size: 14px;
   font-weight: 500;
-  padding: .5rem;
+  padding: 0.8rem;
   margin-right: 1rem;
   max-width: 80%;
   width: auto;
+}
+
+.p-chat__question {
+  color: #fff;
+  background: #5A82AF;
+  font-size: 15px;
+}
+
+.p-chat__answer {
+  color: #000;
+  background: #ebebeb;
+  font-size: 14px;
 }
 
 .p-chat__row {
@@ -45,6 +54,7 @@
   flex-direction: row;
   justify-content: flex-start;
   padding-right: 0 !important;
+  background: #fff;
 }
 
 .p-chat__reverse {
