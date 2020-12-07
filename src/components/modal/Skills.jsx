@@ -39,8 +39,6 @@ const Skills = () => {
   const workToString = '業務経験';
   const bothToString = '業務経験 / 自己学習';
 
-  // Cardに渡すスタイル
-
   // JSONから渡ってきた文字列を表示用に変更
   Object.keys(skillSet).forEach(key => {
     switch (skillSet[key].exp) {
@@ -59,16 +57,13 @@ const Skills = () => {
   });
  
   return (
-//    <div className={classes.root}>
-      <ul className={classes.skillList}>
+    <ul className={classes.skillList}>
       {Object.keys(skillSet).map(key => (
         <li key={key.toString()} className={classes.skillItem}>
           <MediaCard name={skillSet[key].name} exp={skillSet[key].exp} />
         </li>
-       ))}
-
-      </ul>
-  //  </div>
+        ))}
+    </ul>
   )
 
 
