@@ -7,7 +7,8 @@ const useStyles = makeStyles({
   "title": {
     fontSize: "20px",
     textAlign: "center",
-    fontWeight: 600
+    fontWeight: 600,
+    margin: "20px 0px"
   },
   "skillList": {
     width: "100%",
@@ -17,7 +18,7 @@ const useStyles = makeStyles({
     flexWrap: "wrap",
     justifyContent: "space-around",
     margin: 0,
-    padding: "30px 0 0 0"
+    padding: "0 0 0 0"
   },
   "skillItem": {
     width: "40%",
