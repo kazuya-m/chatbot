@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     maxWidth: 500,
     maxHeight: 592,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: "#ffffff",
     outline: 0,
     top: "50%",
     left: "50%",
