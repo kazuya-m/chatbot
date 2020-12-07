@@ -2,16 +2,16 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import MediaCard from './MediaCard';
 import skillSet from '../../assets/dataset/skillset.json'
-import { List } from '@material-ui/icons';
-//import Icon from './Icon.js';
 
 const useStyles = makeStyles({
-  "root": {
-    maxWidth: "100%",
-    alignContent: "center"
+  "title": {
+    fontSize: "20px",
+    textAlign: "center",
+    fontWeight: 600
   },
   "skillList": {
     width: "100%",
+    height: "100%",
     listStyle: "none",
     display: "flex",
     flexWrap: "wrap",
@@ -20,7 +20,7 @@ const useStyles = makeStyles({
     padding: "30px 0 0 0"
   },
   "skillItem": {
-    width: "45%",
+    width: "40%",
     height: 140,
   },
 });
@@ -57,13 +57,16 @@ const Skills = () => {
   });
  
   return (
-    <ul className={classes.skillList}>
-      {Object.keys(skillSet).map(key => (
-        <li key={key.toString()} className={classes.skillItem}>
-          <MediaCard name={skillSet[key].name} exp={skillSet[key].exp} />
-        </li>
-        ))}
-    </ul>
+    <div>
+      <p className={classes.title}>スキル一覧</p>
+      <ul className={classes.skillList}>
+        {Object.keys(skillSet).map(key => (
+          <li key={key.toString()} className={classes.skillItem}>
+            <MediaCard name={skillSet[key].name} exp={skillSet[key].exp} />
+          </li>
+          ))}
+      </ul>
+    </div>
   )
 
 

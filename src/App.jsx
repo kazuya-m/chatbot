@@ -12,7 +12,7 @@ const App = () => {
   const [currentId, setCurrentId] = useState("init");
   const [dataset, setDataset] = useState({});
   const [open, setOpen] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false); //modalのオープン状態
   const [modalId, setModalId] = useState(null);
 
   const displayNextQuestion = (nextQuestionId, nextDataset) => {

@@ -23,8 +23,20 @@
     "name": "Firebase",
     "exp": "study"
   },
-  "Git": {
+  "git": {
     "name": "Git / GitHub",
     "exp": "study"
+  },
+  "jquery": {
+    "name": "jQuery",
+    "exp": "both"
+  },
+  "linux": {
+    "name": "Linux",
+    "exp": "both"
+  },
+  "SubVersion": {
+    "name": "SubVersion",
+    "exp": "work"
   }
 }
