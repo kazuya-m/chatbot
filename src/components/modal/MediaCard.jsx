@@ -36,5 +36,4 @@ const MediaCard = props => {
   );
 }
 
-
 export default MediaCard;
