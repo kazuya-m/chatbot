@@ -3,6 +3,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import NoProfile from '../assets/img/no-profile.png'; 
+import Profile from '../assets/img/profile.jpg';
 
 const Chat = props => {
   const isQuestion = (props.type === 'question');
@@ -12,7 +13,7 @@ const Chat = props => {
     <ListItem alignItems="flex-start" className={classes}>
       <ListItemAvatar>
         {isQuestion ? (
-          <Avatar alt="Kazuya Matsuo" src="/static/images/avatar/1.jpg" />
+          <Avatar alt="KazuyaMatsuo" src={Profile} />
         ) : (
           <Avatar alt="icon-question" src={NoProfile} />
         )}
