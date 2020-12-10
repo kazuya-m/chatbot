@@ -62,7 +62,7 @@ const Skills = () => {
       <ul className={classes.skillList}>
         {Object.keys(skillSet).map(key => (
           <li key={key.toString()} className={classes.skillItem}>
-            <MediaCard name={skillSet[key].name} exp={skillSet[key].exp} />
+            <MediaCard id={key} name={skillSet[key].name} exp={skillSet[key].exp} />
           </li>
           ))}
       </ul>
