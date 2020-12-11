@@ -31,12 +31,12 @@ const MediaCard = props => {
   return (
     <Card>
       <div className={classes.root}>
-      <CardMedia
-        component="img"
-        className={classes.img}
-        image={selectedImage}
-        title={props.key}
-      />
+        <CardMedia
+          component="img"
+          className={classes.img}
+          image={selectedImage}
+          title={props.key}
+        />
       </div>
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
