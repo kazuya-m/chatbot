@@ -8,42 +8,44 @@ import { getSelectedImage } from '../../assets/img/skills/index';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    display: "flex",
+    maxWidth: "100%",
+    height: '140px',
+    margin: "auto",
+    alignItems: "center"
   },
-  media: {
-    maxHeight: 140,
+  img: {
+    width: '80px',
+    fontSize: "1em",
+    margin: "0 auto",
+    padding: "15px 0"
   },
 });
 
-// keyに対応した画像を取得する
-const getImage = id => {
-  console.log(id);
-  const image = getSelectedImage(id);
-  return image;
-}
-
 const MediaCard = props => {
   const classes = useStyles();
-
-  const selectedImage = getImage(props.id);
-  console.log(selectedImage);
-
+  
+  // idに対応した画像を取得する
+  const selectedImage = getSelectedImage(props.id);
 
   return (
-    <Card className={classes.root}>
-        <CardMedia
-          className={classes.media}
-          src={selectedImage}
-          title={props.key}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {props.name}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {props.exp}
-          </Typography>
-        </CardContent>
+    <Card>
+      <div className={classes.root}>
+      <CardMedia
+        component="img"
+        className={classes.img}
+        image={selectedImage}
+        title={props.key}
+      />
+      </div>
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="h2">
+          {props.name}
+        </Typography>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {props.exp}
+        </Typography>
+      </CardContent>
     </Card>
   );
 }

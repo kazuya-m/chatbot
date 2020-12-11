@@ -8,14 +8,14 @@ import Fade from '@material-ui/core/Fade';
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
-    maxWidth: 500,
+    maxWidth: 650,
     maxHeight: 592,
-    backgroundColor: "#ffffff",
+    backgroundColor: "#fafafa",
     outline: 0,
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    borderRadius: "3px",
+    borderRadius: "2px",
     overflow: "scroll"
     
     //border: '1px solid #ffffff',

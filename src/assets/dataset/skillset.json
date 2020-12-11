@@ -11,12 +11,20 @@
     "name": "JavaScript",
     "exp": "both"
   },
+  "typescript": {
+    "name": "TypeScript",
+    "exp": "study"
+  },
   "react": {
     "name": "React",
     "exp": "study"
   },
   "materialui": {
     "name": "Material-UI",
+    "exp": "study"
+  },
+  "nextjs": {
+    "name": "Next.js",
     "exp": "study"
   },
   "firebase": {
@@ -35,7 +43,7 @@
     "name": "Linux",
     "exp": "both"
   },
-  "SubVersion": {
+  "subversion": {
     "name": "SubVersion",
     "exp": "work"
   }

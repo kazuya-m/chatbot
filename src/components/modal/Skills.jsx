@@ -5,7 +5,7 @@ import skillSet from '../../assets/dataset/skillset.json'
 
 const useStyles = makeStyles({
   "title": {
-    fontSize: "20px",
+    fontSize: "18px",
     textAlign: "center",
     fontWeight: 600,
     margin: "20px 0px"
@@ -16,13 +16,14 @@ const useStyles = makeStyles({
     listStyle: "none",
     display: "flex",
     flexWrap: "wrap",
-    justifyContent: "space-around",
+    justifyContent: "space-evenly",
     margin: 0,
-    padding: "0 0 0 0"
+    padding: 0
   },
   "skillItem": {
     width: "40%",
-    height: 140,
+    height: "100%",
+    marginBottom: "20px"
   },
 });
 
