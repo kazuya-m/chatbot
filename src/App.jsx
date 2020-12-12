@@ -3,7 +3,7 @@ import './assets/style/style.css';
 import {AnswersList, Chats} from './components/index';
 import FormDialog from './components/forms/FormDialog';
 import InfoModal from './components/modal/InfoModal';
-import {db} from './firebase/index';
+import { db, getCvRef } from './firebase/index';
 
 
 const App = () => {
@@ -39,6 +39,9 @@ const App = () => {
         addModalId(nextQuestionId);
         handleClickModalOpen();
         break;
+      case (nextQuestionId === 'download'):
+        handleClickPDFDownload();
+        break;
       default:
         addChats({
           text: selectedAnswer,
@@ -73,6 +76,29 @@ const App = () => {
 
   const addModalId = id => {
     setModalId(id);
+  }
+
+  const handleClickPDFDownload = () => {
+    // Create a storage reference from our storage service
+    const cvRef = getCvRef();
+    console.log(cvRef);
+    cvRef.getDownloadURL().then((url) => {
+      console.log(url);
+      // // This can be downloaded directly:
+      // var xhr = new XMLHttpRequest();
+      // xhr.responseType = 'blob';
+      // xhr.onload = function(event) {
+      //   var blob = xhr.response;
+      // };
+      // xhr.open('GET', url);
+      // xhr.send();
+    
+      // // Or inserted into an <img> element:
+      // var img = document.getElementById('myimg');
+      // img.src = url;
+    }).catch((error) => {
+      window.alert(`DLに失敗しました。時間を空けて再度試してください。code=${error}`);
+    });
   }
   
   // 最初の質問をチャットエリアに表示する
