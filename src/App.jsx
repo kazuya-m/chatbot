@@ -80,24 +80,24 @@ const App = () => {
 
   const handleClickPDFDownload = () => {
     // Create a storage reference from our storage service
-    const cvRef = getCvRef();
-    console.log(cvRef);
-    cvRef.getDownloadURL().then((url) => {
-      console.log(url);
-      // // This can be downloaded directly:
-      // var xhr = new XMLHttpRequest();
-      // xhr.responseType = 'blob';
-      // xhr.onload = function(event) {
-      //   var blob = xhr.response;
-      // };
-      // xhr.open('GET', url);
-      // xhr.send();
-    
-      // // Or inserted into an <img> element:
-      // var img = document.getElementById('myimg');
-      // img.src = url;
+    getCvRef().child('mk_cv.pdf').getDownloadURL().then(url => {
+      const xhr = new XMLHttpRequest();
+      xhr.responseType = 'blob';
+      xhr.onload = event => {
+        // blobがファイルのデータです
+        const blob = xhr.response;
+        // aタグをつくります※この辺は自由にアプリに合わせてください
+        const aDL = document.createElement('a');
+        // ファイルデータに紐づくダウンロードリンクを設定します
+        aDL.href = URL.createObjectURL(blob);
+        aDL.download = 'MK(29歳)経歴書.pdf';
+        aDL.click();
+        aDL.remove();
+      };
+      xhr.open('GET', url);
+      xhr.send();
     }).catch((error) => {
-      window.alert(`DLに失敗しました。時間を空けて再度試してください。code=${error}`);
+      window.alert(`DLに失敗しました。時間を空けて再度試してください。code=${error.error.code}`);
     });
   }
   

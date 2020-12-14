@@ -25,6 +25,7 @@ firestore.rules
 src/webhookConfig.js
 src/firebase/config.js
 functions/postDataset.sh
+src/firebase/cors.json
 
 npm-debug.log*
 yarn-debug.log*
