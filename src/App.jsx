@@ -3,7 +3,7 @@ import './assets/style/style.css';
 import {AnswersList, Chats} from './components/index';
 import FormDialog from './components/forms/FormDialog';
 import InfoModal from './components/modal/InfoModal';
-import {db} from './firebase/index';
+import { db, getCvRef } from './firebase/index';
 
 
 const App = () => {
@@ -39,6 +39,9 @@ const App = () => {
         addModalId(nextQuestionId);
         handleClickModalOpen();
         break;
+      case (nextQuestionId === 'download'):
+        handleClickPDFDownload();
+        break;
       default:
         addChats({
           text: selectedAnswer,
@@ -73,6 +76,28 @@ const App = () => {
 
   const addModalId = id => {
     setModalId(id);
+  }
+
+  const handleClickPDFDownload = () => {
+    // download urlを取得
+    getCvRef().child('mk_cv.pdf').getDownloadURL().then(url => {
+      const xhr = new XMLHttpRequest();
+      xhr.responseType = 'blob';
+      xhr.onload = event => {
+        // ファイルの実体
+        const blob = xhr.response;
+        // ファイルデータに紐づくダウンロードリンクを設定
+        const aDL = document.createElement('a');
+        aDL.href = URL.createObjectURL(blob);
+        aDL.download = 'MK(29歳)経歴書.pdf';
+        aDL.click();
+        aDL.remove();
+      };
+      xhr.open('GET', url);
+      xhr.send();
+    }).catch((error) => {
+      window.alert(`DLに失敗しました。時間を空けて再度試してください。code=${error.error.code}`);
+    });
   }
   
   // 最初の質問をチャットエリアに表示する
