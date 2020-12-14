@@ -79,16 +79,15 @@ const App = () => {
   }
 
   const handleClickPDFDownload = () => {
-    // Create a storage reference from our storage service
+    // download urlを取得
     getCvRef().child('mk_cv.pdf').getDownloadURL().then(url => {
       const xhr = new XMLHttpRequest();
       xhr.responseType = 'blob';
       xhr.onload = event => {
-        // blobがファイルのデータです
+        // ファイルの実体
         const blob = xhr.response;
-        // aタグをつくります※この辺は自由にアプリに合わせてください
+        // ファイルデータに紐づくダウンロードリンクを設定
         const aDL = document.createElement('a');
-        // ファイルデータに紐づくダウンロードリンクを設定します
         aDL.href = URL.createObjectURL(blob);
         aDL.download = 'MK(29歳)経歴書.pdf';
         aDL.click();
