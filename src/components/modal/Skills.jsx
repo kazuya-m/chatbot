@@ -1,7 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import MediaCard from './MediaCard';
-import skillSet from '../../assets/dataset/skillset.json'
+import { db } from '../../firebase/index';
+import skillSet from '../../assets/dataset/skillset.json';
 
 const useStyles = makeStyles({
   "title": {
@@ -27,6 +28,15 @@ const useStyles = makeStyles({
   },
 });
 
+// const getSkillset = () => {
+//   db.collection('skillset').get().then(snapshots => {
+//     console.log(snapshots);
+//     // snapshots.forEach(doc => {
+//     //     skillSet[doc.id] = doc.data()
+//     })
+//   });
+// }
+
 const Skills = () => {
   const classes = useStyles();
 
@@ -41,6 +51,11 @@ const Skills = () => {
   const bothToString = '業務経験 / 自己学習';
 
   // JSONから渡ってきた文字列を表示用に変更
+  // const skillSet = {};
+  //   // Fetch questions dataset from Firestore
+  // await getSkillset();
+  // console.log()
+
   Object.keys(skillSet).forEach(key => {
     switch (skillSet[key].exp) {
       case study:
