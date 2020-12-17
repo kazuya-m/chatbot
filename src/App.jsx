@@ -36,8 +36,7 @@ const App = () => {
         handleClickOpen();
         break;
       case (nextQuestionId === 'skills'):
-        addModalId(nextQuestionId);
-        handleClickModalOpen();
+        handleClickModalOpen(nextQuestionId);
         break;
       case (nextQuestionId === 'download'):
         handleClickPDFDownload();
@@ -62,8 +61,9 @@ const App = () => {
     setOpen(true);  
   }
 
-  const handleClickModalOpen = () => {
-    setModalOpen(true);  
+  const handleClickModalOpen = id => {
+    setModalOpen(true);
+    setModalId(id);
   }
 
   const handleClickModalClose = () => {
@@ -73,10 +73,6 @@ const App = () => {
   const handleClickClose = useCallback (() => {
     setOpen(false)
   }, [setOpen]);
-
-  const addModalId = id => {
-    setModalId(id);
-  }
 
   const handleClickPDFDownload = () => {
     // download urlを取得

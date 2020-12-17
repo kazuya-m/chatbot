@@ -8,9 +8,6 @@ firebase.initializeApp(firebaseConfig);
 // Firestore
 export const db = firebase.firestore();
 
-// Storage root
-// sexport const storage = firebase.storage();
-
 // Storage CV Ref
 export const getCvRef = () => {
   const storage = firebase.storage();

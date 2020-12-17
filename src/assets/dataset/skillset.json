@@ -1,49 +1,61 @@
 {
   "html": {
+    "id": "01",
     "name": "HTML",
     "exp": "both"
   },
   "css": {
+    "id": "02",
     "name": "CSS",
     "exp": "both"
   },
   "javascript": {
+    "id": "03",
     "name": "JavaScript",
     "exp": "both"
   },
   "typescript": {
+    "id": "04",
     "name": "TypeScript",
     "exp": "study"
   },
   "react": {
+    "id": "05",
     "name": "React",
     "exp": "study"
   },
   "materialui": {
+    "id": "06",
     "name": "Material-UI",
     "exp": "study"
   },
   "nextjs": {
+    "id": "07",
     "name": "Next.js",
     "exp": "study"
   },
   "firebase": {
+    "id": "08",
     "name": "Firebase",
     "exp": "study"
   },
   "git": {
+    "id": "09",
     "name": "Git / GitHub",
     "exp": "study"
   },
   "jquery": {
+    "id": "10",
     "name": "jQuery",
     "exp": "both"
   },
   "linux": {
+    "id": "11",
     "name": "Linux",
     "exp": "both"
   },
   "subversion": {
+    "id": "12",
     "name": "SubVersion",
     "exp": "work"
   }
