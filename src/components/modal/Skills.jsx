@@ -57,7 +57,7 @@ const Skills = () => {
       // Loading
       setIsLoading(true);
 
-      try{
+      try {
         // Fetch questions skillset from Firestore
         await db.collection("skillset").orderBy("id").get().then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
