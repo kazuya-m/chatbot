@@ -3,7 +3,7 @@ import './assets/style/style.css';
 import {AnswersList, Chats} from './components/index';
 import FormDialog from './components/forms/FormDialog';
 import InfoModal from './components/modal/InfoModal';
-import { db, getCvRef } from './firebase/index';
+import { db, getCvRef, auth } from './firebase/index';
 
 
 const App = () => {
@@ -99,6 +99,13 @@ const App = () => {
   // 最初の質問をチャットエリアに表示する
   useEffect(() => {
     (async() => {
+      auth.signInAnonymously()
+      .then(()=>{
+        console.log("logged in");
+      })
+      .catch(error=> {
+        console.log(`code:${error.code} msg:${error.message}`);
+      })
       const initDataset = {};
 
       // Fetch questions dataset from Firestore
