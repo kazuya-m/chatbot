@@ -99,11 +99,11 @@ const App = () => {
   // 最初の質問をチャットエリアに表示する
   useEffect(() => {
     (async() => {
-      auth.signInAnonymously()
-      .then(()=>{
+      await auth.signInAnonymously()
+      .then(() => {
         console.log("logged in");
       })
-      .catch(error=> {
+      .catch(error => {
         console.log(`code:${error.code} msg:${error.message}`);
       })
       const initDataset = {};
