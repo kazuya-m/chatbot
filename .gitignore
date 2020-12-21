@@ -21,7 +21,8 @@
 # firebase
 .firebaserc
 .firebase
-firestore.rules
+src/firebase/firestore.rules
+src/firebase/storage.rules
 src/webhookConfig.js
 src/firebase/config.js
 functions/postDataset.sh
