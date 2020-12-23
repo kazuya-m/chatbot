@@ -39,3 +39,7 @@ src/env/
 
 # workspace
 chat-bot.code-workspace
+
+# logs
+firestore-debug.log
+ui-debug.log
