@@ -43,3 +43,4 @@ chat-bot.code-workspace
 # logs
 firestore-debug.log
 ui-debug.log
+firebase-debug.log

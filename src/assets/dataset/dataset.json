@@ -45,6 +45,7 @@
     },
     "chat-lang": {
         "answers": [
+            {"content": "全体の構成図を見る", "nextId": "map"},
             {"content": "ひとつ前の質問に戻る", "nextId": "chatbot"},
             {"content": "最初の質問に戻る", "nextId": "init"}
         ],
