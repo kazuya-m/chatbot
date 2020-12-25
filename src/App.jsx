@@ -5,7 +5,6 @@ import FormDialog from './components/forms/FormDialog';
 import InfoModal from './components/modal/InfoModal';
 import { db, getCvRef, auth } from './firebase/index';
 
-
 const App = () => {
   const [answers, setAnswers] = useState([]);
   const [chats, setChats] = useState([]);
@@ -41,6 +40,9 @@ const App = () => {
       case (nextQuestionId === 'download'):
         handleClickPDFDownload();
         break;
+      case (nextQuestionId === 'map'):
+        handleClickModalOpen(nextQuestionId);
+        break;
       default:
         addChats({
           text: selectedAnswer,
@@ -62,8 +64,8 @@ const App = () => {
   }
 
   const handleClickModalOpen = id => {
-    setModalOpen(true);
     setModalId(id);
+    setModalOpen(true);
   }
 
   const handleClickModalClose = () => {
@@ -104,7 +106,7 @@ const App = () => {
         console.log("logged in");
       })
       .catch(error => {
-        console.log(`code:${error.code} msg:${error.message}`);
+        alert(`通信に失敗しました。code:${error.code} msg:${error.message}`);
       })
       const initDataset = {};
 

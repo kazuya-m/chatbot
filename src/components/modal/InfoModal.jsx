@@ -4,12 +4,14 @@ import Modal from '@material-ui/core/Modal';
 import Skills from './Skills';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
+import AppMap from '../../assets/img/chatbot.svg';
+
 
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
-    maxWidth: 650,
-    maxHeight: 592,
+    maxWidth: 1100,
+    maxHeight: 800,
     backgroundColor: "#fafafa",
     outline: 0,
     top: "50%",
@@ -17,11 +19,11 @@ const useStyles = makeStyles((theme) => ({
     transform: "translate(-50%, -50%)",
     borderRadius: "2px",
     overflow: "scroll"
-    
-    //border: '1px solid #ffffff',
-    // boxShadow: theme.shadows[5],
-    // padding: theme.spacing(2, 4, 3),
   },
+  map: {
+    width: 900,
+    height: 700
+  }
 }));
 
 const InfoModal = props => {
@@ -37,6 +39,17 @@ const InfoModal = props => {
           <Skills />
         </div>
       );    
+      break;
+    case 'map':
+      body = (
+        <div className={classes.paper}>
+          <object
+            className={classes.map}
+            type="image/svg+xml" data={AppMap}
+            aria-label="Application map" 
+           />
+        </div>
+      );
       break;
     default:
       break;
