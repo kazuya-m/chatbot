@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     margin: "20px 0px"
   },
   "skillList": {
-    width: "100%",
+    width: 560,
     height: "100%",
     listStyle: "none",
     display: "flex",
