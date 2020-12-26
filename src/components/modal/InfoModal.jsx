@@ -10,7 +10,7 @@ import AppMap from '../../assets/img/chatbot.svg';
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
-    maxWidth: 900,
+    maxWidth: 1200,
     maxHeight: 700,
     backgroundColor: "#fafafa",
     outline: 0,
@@ -18,11 +18,15 @@ const useStyles = makeStyles((theme) => ({
     left: "50%",
     transform: "translate(-50%, -50%)",
     borderRadius: "2px",
-    overflow: "scroll"
+    overflow: "scroll",
   },
   map: {
     width: 900,
-    height: 700
+    height: 700,
+    [theme.breakpoints.down("sm")]: {
+      width: "90vw",
+      height: "50vh"
+    },
   }
 }));
 

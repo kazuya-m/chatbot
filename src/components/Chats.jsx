@@ -6,7 +6,7 @@ import {Chat} from './index';
 const useStyles = makeStyles(() => (
   createStyles({
     "chats": {
-      height: 400,
+      height: "60%",
       padding: 0,
       overflow: 'auto'
     }

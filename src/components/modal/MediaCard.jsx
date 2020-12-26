@@ -6,21 +6,26 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { getSelectedImage } from '../../assets/img/skills/index';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     maxWidth: "100%",
     height: '140px',
     margin: "auto",
-    alignItems: "center"
+    alignItems: "center",
+    [theme.breakpoints.down("sm")]: {
+      height: '90px',
+    }
   },
   img: {
     width: '80px',
     fontSize: "1em",
     margin: "0 auto",
-    padding: "15px 0"
+    [theme.breakpoints.down("sm")]: {
+      width: '50px',
+    }
   },
-});
+}));
 
 const MediaCard = props => {
   const classes = useStyles();

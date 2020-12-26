@@ -4,7 +4,7 @@ import MediaCard from './MediaCard';
 import { db } from '../../firebase/index';
 import { Fragment } from 'react';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   "indicator": {
     padding: "100px 100px",
     color: "#77787B"
@@ -16,21 +16,31 @@ const useStyles = makeStyles({
     margin: "20px 0px"
   },
   "skillList": {
-    width: 560,
+    width: 680,
     height: "100%",
     listStyle: "none",
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-evenly",
     margin: 0,
-    padding: 0
+    padding: 0,
+    [theme.breakpoints.down("sm")]: {
+      width: "90vw",
+      height: 300,
+      justifyContent: "center",
+      paddingBottom: "10px"
+    },  
   },
   "skillItem": {
     width: "40%",
     height: "100%",
-    marginBottom: "20px"
+    paddingBottom: "20px",
+    [theme.breakpoints.down("sm")]: {
+      width: "80%",
+      height: "65%",
+    },
   },
-});
+}));
 
 const Skills = () => {
   const [skillset, setSkillset] = useState({});
@@ -102,14 +112,14 @@ const Skills = () => {
         <h2 className={classes.indicator}>Loading...</h2>
       ) : (
         <div>  
-        <p className={classes.title}>スキル一覧</p>
-        <ul className={classes.skillList}>
-          {Object.keys(skillset).map(key => (
-            <li key={key.toString()} className={classes.skillItem}>
-              <MediaCard id={key} name={skillset[key].name} exp={skillset[key].exp} />
-            </li>
+          <p className={classes.title}>スキル一覧</p>
+          <ul className={classes.skillList}>
+            {Object.keys(skillset).map(key => (
+              <li key={key.toString()} className={classes.skillItem}>
+                <MediaCard id={key} name={skillset[key].name} exp={skillset[key].exp} />
+              </li>
             ))}
-        </ul>
+          </ul>
         </div>
       )}
     </Fragment>
