@@ -30,6 +30,12 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: "center",
       paddingBottom: "10px"
     },  
+    [theme.breakpoints.down("md")]: {
+      width: "90vw",
+      height: "100%",
+      justifyContent: "space-evenly",
+      paddingBottom: "10px"
+    },  
   },
   "skillItem": {
     width: "40%",
@@ -38,6 +44,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       width: "80%",
       height: "65%",
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "38%",
+      height: "40%",
     },
   },
 }));
