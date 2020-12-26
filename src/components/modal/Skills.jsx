@@ -24,16 +24,16 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-evenly",
     margin: 0,
     padding: 0,
-    [theme.breakpoints.down("sm")]: {
-      width: "90vw",
-      height: 300,
-      justifyContent: "center",
-      paddingBottom: "10px"
-    },  
     [theme.breakpoints.down("md")]: {
       width: "90vw",
       height: "100%",
       justifyContent: "space-evenly",
+      paddingBottom: "10px"
+    },  
+    [theme.breakpoints.down("sm")]: {
+      width: "90vw",
+      height: 300,
+      justifyContent: "center",
       paddingBottom: "10px"
     },  
   },
@@ -41,13 +41,13 @@ const useStyles = makeStyles((theme) => ({
     width: "40%",
     height: "100%",
     paddingBottom: "20px",
-    [theme.breakpoints.down("sm")]: {
-      width: "80%",
-      height: "65%",
-    },
     [theme.breakpoints.down("md")]: {
       width: "38%",
       height: "40%",
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "80%",
+      height: "65%",
     },
   },
 }));
