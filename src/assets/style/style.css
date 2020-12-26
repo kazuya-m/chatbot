@@ -6,13 +6,14 @@
 
 .c-box {
   background: #fff;
-  border: 1px solid rgba(0,0,0,0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   box-sizing: border-box;
-  height: 592px;
-  max-width: 432px;
+  max-width: 500px;
+  max-height: 592px;
+  width: 90vw;
+  height: 90vh;
   padding: 0 1rem;
-  width: 100%;
 
   /* Vertical and horizontal center alignment */
   position: absolute;
@@ -25,7 +26,7 @@
   display: flex;
   flex-flow: column;
   justify-content: flex-end;
-  height: 192px;
+  height: 40%;
 }
 
 .p-chat__bubble {
@@ -39,7 +40,7 @@
 
 .p-chat__question {
   color: #fff;
-  background: #5A82AF;
+  background: #5a82af;
   font-size: 15px;
 }
 
@@ -72,6 +73,6 @@
 
 .p-question__description {
   font-size: 1rem;
-  letter-spacing: .125rem;
+  letter-spacing: 0.125rem;
   line-height: 1.7;
 }
